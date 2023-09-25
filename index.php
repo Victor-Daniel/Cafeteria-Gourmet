@@ -1,21 +1,17 @@
 <?php
 require_once "autoload.php"; 
-
-use app\controllers\pages\ControllerHome;
 use app\http\Router;
 
-define('URL','http://localhost/Cafeteria-Gourmet');
+$Rota = new Router();
+$Content = $Rota -> GetController();
+echo $Content;
 
-$OBJ = new Router(URL);
-echo "<pre>";
-print_r($OBJ);
-echo "</pre>";
+/*
+        echo "<pre>";
+        print_r();
+        echo "</pre>";
 
-exit;
-
-echo ControllerHome::GetHome();
-
-
+*/
 
 
 ?>

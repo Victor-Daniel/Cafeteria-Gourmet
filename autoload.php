@@ -8,7 +8,7 @@ spl_autoload_register(
         if(file_exists($DirBase)){
             require_once $DirBase;
         }
-       
+        
     }
 );
 ?>
