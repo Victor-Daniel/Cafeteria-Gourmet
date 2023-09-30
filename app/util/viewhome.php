@@ -5,7 +5,7 @@ class ViewHome{
     
 
     //Método responsável por retornar o conteúdo exato do Arquivo HTML da view.
-    private static function GetContentView($NameView){
+    public static function GetContentView($NameView){
         $File = __DIR__."/../view/html/".$NameView.".html";
         if(file_exists($File)){
             return file_get_contents($File);
@@ -15,7 +15,7 @@ class ViewHome{
         }
     }
     //Método responsável por retornar o conteúdo Renderizado.
-    public static function RenderHome($NameView,$vars=[]){
+    public static function Render($NameView,$vars=[]){
         $Render = self::GetContentView($NameView);
         // Substituindo o valor das chaves no documento pelos valores do array
         //Pegando as chaves do array recebido
@@ -33,7 +33,7 @@ class ViewHome{
     }
     //Renderiza o conteúdo do body
     public static function RenderBody(){
-        return self::GetContentView("body");
+        return self::GetContentView("bodyindex");
     }
     //Renderiza o conteúdo do footer.
     public static function RenderFooter(){

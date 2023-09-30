@@ -42,11 +42,12 @@ class Router{
                         $Content = $this->Response->SendResponseHome(200,"text/html");
                         break;
                 case "/cardapio.php":  
-                        
+                        $Content = $this->Response->SendResponseCardapio(200,"text/html");
                         break;
               }  
                 return $Content;
         }
+        //Método retorna o conteúdo da rota atual
         public function GetController(){
                 //Pega a URI Atual do Site
                 $URI = $this->Request->GetURI();
@@ -64,7 +65,6 @@ class Router{
                         }
                         else
                         {
-
                         }
 
                 }
