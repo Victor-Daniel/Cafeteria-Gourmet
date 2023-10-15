@@ -1,0 +1,111 @@
+
+h2,h3,h4{
+    padding: 0;
+    margin: 0;
+}
+/*Configurando CSS para os filtros. O padrão original é para telas de celular ou tabletes*/
+
+.menu-cardapio{
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.menu-cardapio > .lateral{
+    background-color: white;
+    text-align: center;
+}
+
+.menu-cardapio > .lateral > h4{
+    font-family: 'Poppins', sans-serif;
+    color: #2b3856d5;
+    margin-bottom: 1.5rem;
+
+}
+.menu-cardapio > .lateral > .menu-lateral{
+    display: none;
+}
+.menu-cardapio > .lateral > .menu-lateral > li{
+    font-family: 'Oswald', sans-serif;
+    color: #2b3856d5;
+    margin-bottom: 1.5rem;
+}
+
+.menu-cardapio > .lateral > .menu-lateral > li:hover{
+    cursor: pointer;
+}
+
+/*Configuração para os cards. A configuração Padrão é para telas pequenas*/
+
+.allcards{
+    display: grid;
+    grid-template-columns: 100%;
+    /*grid-template-columns: 20% 20% 20% 20% 20%;*/
+    grid-gap: 0rem;
+    justify-items: center;
+}
+.card{
+    width: 80vw;
+    height: 54vh;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover{
+    background-color: white;
+    box-shadow: 4px 4px 12px #DCDCDC;
+    cursor: pointer;
+}
+.card>img{
+    margin-bottom: 0.5rem;
+    margin-top: 1.3rem;
+    width: 40vw;
+    height: 25vh;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.card>div{
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.card>div>h2{
+    font-size: 1.8rem;
+    font-family: 'Oswald', sans-serif;
+    color: #2b3856d5;
+}
+
+.card>div>h3{
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    color: #2b3856d5;
+    
+}
+
+.card>div>span{
+    font-size:large;
+    font-family: 'Poppins', sans-serif;
+    color: #2b3856d5;
+}
+
+.card>div>a>.comprar{
+    background-color: transparent;
+    color: #2b3856d5;
+    width: 22vw;
+    height: 4vh;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1.2rem;
+}
+
+.card>div>a>.comprar:hover{
+    cursor: pointer;
+    background-color: #2b3856d5;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,53 @@
+/*Configuração feita como padrão para tela a partir de 1160px de tamanho*/
+
+@media screen and (min-width:1160px){
+    .menu-cardapio{
+        display: grid;
+        grid-template-columns: 5% 95%;
+        background-color: aliceblue;
+        
+    }
+    .menu-cardapio > .lateral{
+        align-self: center;
+        text-align: center;
+        background-color: white;
+        width: 7vw;
+        height:auto;
+        margin-left: 0.4rem;
+    }
+    .menu-cardapio > .lateral > h4{
+        font-size: 1.2rem;
+    }
+    .menu-cardapio > .lateral > .menu-lateral{
+        padding-bottom: 2.0rem;
+        display: block !important;
+        list-style: none;
+    }
+    .menu-cardapio > .lateral > .menu-lateral > li{
+        margin-top: 1.2rem;
+        font-size: 1.1rem;
+    }
+    .allcards{
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        justify-items: center;
+        margin-right: 2.5rem;
+        margin-left: 1.8rem;
+    }
+
+    .card{
+        width: 16vw;
+        height: 35vh;
+    }
+
+    .card>div>a>.comprar{
+        width: 8vw;
+        margin-top: 1rem;
+
+    }
+    .card>img{
+        width: 9vw;
+        height: 10vh;
+    }
+}

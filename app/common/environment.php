@@ -2,6 +2,8 @@
 
 namespace app\common;
 
+use Exception;
+
 // CLasse que carrega as variáveis de ambiente
 class Environment{
     public static function Load(){
@@ -10,7 +12,7 @@ class Environment{
             self::File($Dir);
         }
         else{
-            //Tratar das exessoes
+            die("Não foi possível encontrar o arquivo '.env'");
         }
     }
 

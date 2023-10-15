@@ -1,0 +1,108 @@
+/*A configuração padrão é para telefone e tabletes. Quando atingir um tamanho de tela partindo de 992px, será usado essas configurações*/
+
+@media screen and (min-width:992px){
+    .header>.nav>.navbar{
+        margin-bottom: 0.5rem;
+    }
+    .header > .nav >.navbar{
+        list-style: none;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    
+    }
+    .header > .nav >.navbar >.item{
+        margin:0.1rem;
+        width: 6.0vw;
+        height: 7.0vh;
+        text-align:center;
+
+    }
+    .header > .nav >.navbar >.item >a{
+        text-decoration: none;
+        margin:0.2rem;
+        width: 5.0vw;
+        color: white; 
+        font-family: 'Oswald', sans-serif; 
+        font-size: large;
+    }
+    
+    
+    .header > .nav >.navbar >.item:hover > a{
+        background-color: white;
+        color: #2b3856d5;
+    }
+    .header > .nav >.navbar >.item:hover{
+        background-color: white;
+    }
+}
+
+/*A configuração do bady da home é para pc. Quando atingir um tamanho de tela de no máximo de 992px, será usado essas configurações*/
+@media screen and (max-width:992px) {
+    .body>.p1{
+        grid-column: 1/4;
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .body>.p1>div>p{
+        text-align: justify;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .body>.p1>div>img{
+        width: 80vw;
+        height: 40vh;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .body>.p2{
+        grid-column: 1/4;
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .body>.p2>#textsecondary{
+        text-align: center;
+        display: block;
+    }
+    .body>.p2>div>p{
+        text-align: justify;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .body>.p2>#textprimary{
+        text-align: center;
+        display: none;
+    }
+    .body>.p2>div>img{
+        width: 80vw;
+        height: 40vh;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .body>.p3{
+        grid-column: 1/4;
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .body>.p3>div>p{
+        text-align: justify;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .body>.p3>div>img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 80vw;
+        height: 45vh;   
+        border-radius: 10px;
+    }
+}

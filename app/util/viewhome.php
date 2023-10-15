@@ -31,10 +31,6 @@ class ViewHome{
     public static function RenderHeader(){
         return self::GetContentView("header");
     }
-    //Renderiza o conteúdo do body
-    public static function RenderBody(){
-        return self::GetContentView("bodyindex");
-    }
     //Renderiza o conteúdo do footer.
     public static function RenderFooter(){
         return self::GetContentView("footer");

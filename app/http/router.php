@@ -15,6 +15,7 @@ class Router{
             $this->Response = new Response();
             $this->Request = new Request(); 
             $this->SetRouterGET();
+            $this->SetRouterPOST();
         }
         //Verifica a existencia do Controller e retorna o nome dele se ele existir
         private function BrowserController($BrowserController){
@@ -31,8 +32,15 @@ class Router{
         private function SetRouterGET(){
                 $this->GET=[
                         "/"=>"controllerhome",
-                        "/cardapio.php"=>"controllercardapio"
+                        "/cardapio.php"=>"controllercardapio",
+                        "/carrinho.php"=>"controllercarrinho"
                 ]; 
+        }
+
+        private function SetRouterPOST(){
+                $this->POST=[
+                        "/login.php"=>"controllerlogin"
+                ];
         }
         //Método que executa a rota
         private function ExecuteRouter($URI){
@@ -44,6 +52,10 @@ class Router{
                 case "/cardapio.php":  
                         $Content = $this->Response->SendResponseCardapio(200,"text/html");
                         break;
+                case "carrinho.php":
+                        break;
+                case "login.php":
+                        break;                
               }  
                 return $Content;
         }
@@ -61,16 +73,32 @@ class Router{
                                 //Caso exista o controller ele trás o conteúdo passando como parâmetro a URI 
                                 $Content = $this->ExecuteRouter($URI);
                             }
+                            else{
+                                die("Controller não encontrado!");
+                            }
                                 
                         }
-                        else
-                        {
+                        else{
+                             die("Rota não encontrada!");   
                         }
 
                 }
                 else{
                       if($this->Request->GetMethod()=="POST"){
-
+                        if(array_key_exists($URI,$this->POST)){
+                                //Caso exista ele verifica se existe um arquivo de Controller para essa rota
+                            if($this->BrowserController($this->POST[$URI])){
+                                //Caso exista o controller ele trás o conteúdo passando como parâmetro a URI 
+                                $Content = $this->ExecuteRouter($URI);
+                            }
+                            else{
+                                die("Controller não encontrado!");
+                            }
+                                
+                        }
+                        else{
+                             die("Rota não encontrada!");   
+                        }
                      }
                 }
                 
