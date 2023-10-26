@@ -2,14 +2,15 @@
 namespace app\controllers\pages;
 use app\util\ViewCardapio;
 use app\models\DataBase;
-use app\util\ViewHome;
 
 // Retorna a página renderizada do cardápio
 class ControllerCardapio{
-    public static function GetCardapio(){
+    private static $IDPROD = [];
+    public static function GetCardapio($User = null){
         self::RenderBodyCardapio();
         return ViewCardapio::Render("cardapio",[
             "Header"=> ViewCardapio::RenderHeader(),
+            "User"=>$User,
             "Body"=> ViewCardapio::GetContentView("bodycardapio"),
             "QuantidadeSalgados"=>self::QuantSalgados(),
             "QuantidadeBedidas"=>self::QuantBebidas(),
@@ -27,6 +28,7 @@ class ControllerCardapio{
         $Price = $Prod->GetNamePrecoProdutos();
         $Image = $Prod->GetPictureNameProd();
         $Type = $Prod->GetTypeProd();
+        $ID = $Prod->GetIDProds();
         $ContentHTML = [];
         file_put_contents("app/view/html/bodycardapio.html","");
         for($i=0;$i<count($Name);$i++){
@@ -38,7 +40,7 @@ class ControllerCardapio{
                     <h3>{$Desc[$i]}</h3>
                     <span>R$ {$Price[$i]}</span>
                     <br>
-                    <a href='#'><input type='button' value='Comprar ' class='comprar'></a>
+                    <a href='carrinho.php'><input type='button' value='Comprar ' class='comprar'></a>
                 </div>
             </div>
 
@@ -93,5 +95,7 @@ class ControllerCardapio{
 
         return $Quant;
     }
+
+   
 }
 ?>

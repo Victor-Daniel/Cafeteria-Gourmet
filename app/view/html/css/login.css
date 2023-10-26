@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+body,ul,li{
+    margin: 0;
+    padding: 0;
+}
+label{
+    width: 50px;
+    display: inline-block;
+    margin-right: 2rem;
+    margin-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: larger;
+    color: #2b3856d5;
+}
+
+.login > .form-login > #imlogin{
+    width: 8vw;
+    display: inline-block;
+    margin-top: 10px;
+    height: 2vh;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login > .form-login > #imlogin:focus{
+    border: 2px solid #2b3856d5;
+}
+
+.login{
+    background-color: #2b3856d5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login > .form-login{
+    background-color: white;
+    width: 30vw;
+    height: 55vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.login > .form-login > .logo{
+    width: 17vw;
+    height: 18vh;
+    margin-top: 3.5rem;
+}
+
+
+.login > .form-login > #btn-login{
+    width: 10vw;
+    height: 3vh;
+    background-color: #2b3856d5;
+    color: white;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: medium;
+}
+
+.login > .form-login > #btn-login:hover{
+    cursor: pointer;
+    background-color: #041d58d5;
+}

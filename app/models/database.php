@@ -223,5 +223,26 @@ class DataBase{
             die("ERROR: Não foi possível realizar conexão! ".$Ex->getMessage());
         }
     }
+
+    public function GetIDProds(){
+        try{
+            $IDProd = [];
+            //Criando conexão pdo com mysql'
+            $Conection = new mysqli($this->Host,$this->UserName,$this->Pass,$this->Database,$this->Port);
+            $Result = mysqli_query($Conection,"select id from produtos");
+            $Conection->close();  
+            $i=0;    
+            while($Content=mysqli_fetch_row($Result)){
+                
+               $IDProd[$i] = $Content[0];
+               $i++;
+             }
+             return $IDProd;
+        }
+        catch(mysqli_sql_exception $Ex){
+            
+            die("ERROR: Não foi possível realizar conexão! ".$Ex->getMessage());
+        }
+    }
 }
 ?>

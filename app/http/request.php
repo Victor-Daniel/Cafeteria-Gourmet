@@ -1,10 +1,7 @@
 <?php
 namespace app\http;
 
-class Request{
-
-
-    
+class Request{   
     Private $URI;
     Private $Method;
     private $Prefix;

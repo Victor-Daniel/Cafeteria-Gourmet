@@ -33,34 +33,38 @@ class Router{
                 $this->GET=[
                         "/"=>"controllerhome",
                         "/cardapio.php"=>"controllercardapio",
-                        "/carrinho.php"=>"controllercarrinho"
+                        "/carrinho.php"=>"controllercarrinho",
+                        "/login.php"=>"controllerlogin",
+                       
                 ]; 
         }
 
         private function SetRouterPOST(){
                 $this->POST=[
-                        "/login.php"=>"controllerlogin"
+                       "/"=>"controllerhome"
                 ];
         }
         //Método que executa a rota
-        private function ExecuteRouter($URI){
+        private function ExecuteRouter($URI,$User){
               $Content = "";
                 switch($URI){
                 case "/":
-                        $Content = $this->Response->SendResponseHome(200,"text/html");
-                        break;
+                        $Content = $this->Response->SendResponseHome(200,"text/html",$User);
+                        break;        
                 case "/cardapio.php":  
-                        $Content = $this->Response->SendResponseCardapio(200,"text/html");
+                        $Content = $this->Response->SendResponseCardapio(200,"text/html",$User);
                         break;
-                case "carrinho.php":
+                case "/carrinho.php":
+                        $Content = $this->Response->SendResponseCarrinho(200,"text/html",$User);
                         break;
-                case "login.php":
-                        break;                
+                case "/login.php":
+                        $Content = $this->Response->SendResponseLogin(200,"text/html");
+                        break;
               }  
                 return $Content;
         }
         //Método retorna o conteúdo da rota atual
-        public function GetController(){
+        public function GetController($User=null){
                 //Pega a URI Atual do Site
                 $URI = $this->Request->GetURI();
                 $Content="";
@@ -71,15 +75,12 @@ class Router{
                                 //Caso exista ele verifica se existe um arquivo de Controller para essa rota
                             if($this->BrowserController($this->GET[$URI])){
                                 //Caso exista o controller ele trás o conteúdo passando como parâmetro a URI 
-                                $Content = $this->ExecuteRouter($URI);
+                                $Content = $this->ExecuteRouter($URI,$User);
                             }
                             else{
                                 die("Controller não encontrado!");
                             }
                                 
-                        }
-                        else{
-                             die("Rota não encontrada!");   
                         }
 
                 }
@@ -89,7 +90,7 @@ class Router{
                                 //Caso exista ele verifica se existe um arquivo de Controller para essa rota
                             if($this->BrowserController($this->POST[$URI])){
                                 //Caso exista o controller ele trás o conteúdo passando como parâmetro a URI 
-                                $Content = $this->ExecuteRouter($URI);
+                                $Content = $this->ExecuteRouter($URI,$User);
                             }
                             else{
                                 die("Controller não encontrado!");
