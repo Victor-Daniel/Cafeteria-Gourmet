@@ -35,13 +35,14 @@ class Router{
                         "/cardapio.php"=>"controllercardapio",
                         "/carrinho.php"=>"controllercarrinho",
                         "/login.php"=>"controllerlogin",
-                       
+                        "/pagamento.php"=>"controllerpagamento"
                 ]; 
         }
 
         private function SetRouterPOST(){
                 $this->POST=[
-                       "/"=>"controllerhome"
+                       "/"=>"controllerhome",
+                       "/pagamento.php"=>"controllerpagamento"
                 ];
         }
         //Método que executa a rota
@@ -60,13 +61,16 @@ class Router{
                 case "/login.php":
                         $Content = $this->Response->SendResponseLogin(200,"text/html");
                         break;
+                case "/pagamento.php":
+                        $Content = $this->Response->SendResponsePagamentos(200,"text/html");        
               }  
                 return $Content;
         }
         //Método retorna o conteúdo da rota atual
         public function GetController($User=null){
                 //Pega a URI Atual do Site
-                $URI = $this->Request->GetURI();
+                $UriPersonalisada = parse_url($this->Request->GetURI());
+                $URI = $UriPersonalisada["path"];
                 $Content="";
                 // Verifica se o Méthodo usado foi o GET, se for ele verificará se existe uma rota pra ele e retorna o Conteúdo baseado no tipo de rota
                 if($this->Request->GetMethod()=="GET"){

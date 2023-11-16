@@ -60,3 +60,30 @@ http://localhost/Cafeteria-Gourmet/cardapio.php
             <a href='#'><input type='button' value='Comprar' class='comprar'></a>
         </div>
     </div>
+
+
+
+----------------------------------------------------------------------------------------------
+
+<div class="CardCarrinho">
+    <div class="Prod">
+        <img src="#"/>
+        <h3>Nome do Produto</h3>
+        <h4>R$ 12,00</h4>
+    </div>
+    <div class="QuantCompra">
+        <div>
+            <label for='Quantidade'><h4>Quant</h4></label>
+            <div class='QuantProd'>
+                <span id='Diminuir'> < </span>
+                <input type='text' name='Quant' id='Quantidade' value='1' readonly>
+                <span id='Aumentar'> > </span>
+            </div>
+        </div>
+
+        <div class='QuantEstoque'>
+            <h4>Quantidade no Estoque</h4>
+            <p>{{Estoque}}</p>
+        </div>
+    </div>
+</div>

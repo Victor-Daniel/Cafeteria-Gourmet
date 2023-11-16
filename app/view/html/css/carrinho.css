@@ -1,0 +1,150 @@
+html,body,p{
+    padding: 0;
+    margin: 0;
+}
+h3,h4,label,h5{
+    padding: 0;
+    margin: 0;
+    color: #2b3856d5;
+}
+input{
+    padding: 0;
+    margin: 0;
+    width: 2vw;
+}
+.Carrinho{
+    width: 100vw;
+    background-color:#cecece;
+    display: grid;
+    grid-template-columns: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.Carrinho > .CardCarrinho{
+    grid-column: 1/2;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    background-color: white;
+    height: 10vh;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.Carrinho > .CardCarrinho > .Prod{
+    display: flex;
+    margin-right: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.Carrinho > .CardCarrinho > .Prod > h3,h4{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.Carrinho > .CardCarrinho > .Prod > label{
+    margin: 0 !important;
+    font-size: 1.5rem;
+}
+
+.Carrinho > .CardCarrinho > .QuantCompra{
+    display: flex !important;
+    margin-top: 0.2rem;
+    
+}
+
+.Carrinho > .CardCarrinho > .QuantCompra >div{
+    text-align: center;
+    margin-right: 1.5rem;
+}
+
+
+.Carrinho > .CardCarrinho >.QuantCompra >.QuantEstoque > p{
+    font-family: 'Oswald', sans-serif;
+    color: #2b3856d5;
+    font-size: medium;
+}
+
+.Carrinho > .CardCarrinho > .QuantCompra >div>.QuantProd > #Quantidade{
+    border-style: none;
+    font-family: 'Oswald', sans-serif;
+    color: #2b3856d5;
+    font-size: medium;
+    text-align: center;
+}
+.Carrinho > .CardCarrinho > .QuantCompra >div > .QuantProd > #Quantidade:focus{
+    outline: 0;
+}
+.Carrinho > .CardCarrinho > .QuantCompra >div> .QuantProd  > #Aumentar:hover{
+    cursor: pointer;
+}
+
+.Carrinho > .CardCarrinho > .QuantCompra >div> .QuantProd  > #Diminuir:hover{
+    cursor: pointer;
+
+}
+
+.Carrinho > .Atualizar-Carrinho{
+    width: 10vw;
+    
+}
+.Pagamento{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #cecece;
+    padding-bottom: 1.5rem;
+}
+
+.Pagamento>form{
+    background-color: white;
+    width: 41vw;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    padding-top: 1.2rem;
+}
+
+.Pagamento>form>button{
+    margin-bottom: 1.2rem;
+    background-color: #2b3856d5;
+    color: white;
+    border-style: none;
+    height: 1.8rem;
+    border-radius: 10px;
+    outline: none;
+    width: 10vw;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+}
+
+.Pagamento >form> .button:hover{
+    cursor: pointer;
+}
+
+.Pagamento>form>div{
+    margin-bottom: 1.2rem;
+}
+
+.Pagamento>form>div>input{
+    width: 9vw;
+    outline: none;
+}
+
+.Pagamento>form>div>input:focus{
+    border-color:#2b3856d5 ;
+}
+
+.Pagamento>form>div>label{
+    /*font-family: 'Poppins', sans-serif;*/
+    font-family: 'Oswald', sans-serif;
+}
+

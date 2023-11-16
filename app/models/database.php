@@ -4,7 +4,7 @@ use app\common\Environment;
 use mysqli_sql_exception;
 use \mysqli;
 
-// Classe responsável pelas consultas e atualização de registro no banco.
+// Classe responsável pelas consultas de registro no banco.
 class DataBase{
     private $Host;
     private $UserName;
@@ -37,6 +37,7 @@ class DataBase{
        
     }
 
+    //Os métodos abaixo Retornam os resultados de consultas sobre determinado produto.
     public function GetNameAllProdutos(){
         try{
             $NameProd = [];

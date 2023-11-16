@@ -6,10 +6,43 @@
     <title>Carrinho</title>
     <link rel="stylesheet" href="app/view/html/css/style.css">
     <link rel="stylesheet" href="app/view/html/css/media-query.css">
+    <link rel="stylesheet" href="app/view/html/css/carrinho.css">
 </head>
 <body>
     {{Header}}
+    <Section class="Carrinho">
+        {{Body}}
 
+    </Section>
+    <section class="Pagamento">
+
+        <form class="form" action="#">
+            <div>
+                <label for="cardNumber">Número do Cartão:</label>
+                <input type="text" class="CartaoDados" id="cardNumber" name="cardNumber" placeholder="**** **** **** ****" maxlength="16" required>
+            </div>
+
+            <div>
+                <label for="cardHolder">Nome no Cartão:</label>
+                <input type="text" class="CartaoDados" id="cardHolder" name="cardHolder" placeholder="Nome Completo" required>
+            </div>
+
+            <div>
+                <label for="expiryDate">Data de Validade:</label>
+                <input type="text" class="CartaoDados" id="expiryDate" name="expiryDate" placeholder="MM/AA" maxlength="5" required>
+            </div>
+
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" class="CartaoDados" id="cvv" name="cvv" placeholder="***" maxlength="3" required>
+            </div>
+
+        <button class="button">Confirmar Pagamento</button>
+        </form>
+    </section>
     {{Footer}}
+    <script src="app/view/html/js/carrinho.js"></script>
+    <script src="app/view/html/js/pagamento.js"></script>
+    <script src="app/view/html/js/menu.js"></script>
 </body>
 </html>

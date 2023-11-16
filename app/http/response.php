@@ -4,6 +4,7 @@ use app\controllers\pages\ControllerHome;
 use app\controllers\pages\ControllerCardapio;
 use app\controllers\pages\ControllerCarrinho;
 use app\controllers\pages\ControllerLogin;
+use app\controllers\pages\ControllerPagamento;
 
 class Response{
   private $Content;
@@ -38,6 +39,7 @@ class Response{
     return $this->Content;
   }
 
+  //Método que responsável por dar o response do conteúdo do Login
   public function SendResponseLogin($httpcode,$ContentType){
     $this->AddHeaders("Content-Type",$ContentType);
     http_response_code($httpcode);
@@ -48,6 +50,7 @@ class Response{
     $this->Content = ControllerLogin::RenderLogin();
     return $this->Content;
   }
+   //Método que responsável por dar o response do conteúdo do Carrinho de compras
   public function SendResponseCarrinho($httpcode,$ContentType,$User=null){
     $this->AddHeaders("Content-Type",$ContentType);
     http_response_code($httpcode);
@@ -55,7 +58,18 @@ class Response{
         header($Key.": ".$Value);
     }
 
-    $this->Content = ControllerCarrinho::GetCarrinho();
+    $this->Content = ControllerCarrinho::GetCarrinho($User);
+    return $this->Content;
+  }
+
+  public function SendResponsePagamentos($httpcode,$ContentType){
+    $this->AddHeaders("Content-Type",$ContentType);
+    http_response_code($httpcode);
+    foreach($this->Headers as $Key=>$Value){
+        header($Key.": ".$Value);
+    }
+
+    $this->Content = ControllerPagamento::RenderPagamento();
     return $this->Content;
   }
 }
