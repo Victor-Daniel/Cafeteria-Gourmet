@@ -12,34 +12,34 @@ Padrão de desenvolvimento MVC.
 
 # Principais Diretórios:
 
- /app
+/app
 
 Este é o diretório principal deste projeto. É nele onde estão todas funções tanto de Backend quanto de Frontend.
 
 
-# /app/common
+/app/common
 
 Este diretório é destinado a arquivos que recebem dados via AJAX.
 
 
-# /app/controllers/pages
+/app/controllers/pages
 
 É neste diretório que se encontra as classes que são responsáveis por fazer o intermédio entre as Classes de Views e as Classes de Models.
 
 
-# /app/http
+/app/http
 
 Este é o diretório responsável por armazenar as classes responsáveis pelas requisições recebidas e fornecer uma resposta. É nesse diretório onde está as Classes de Request, Response e Router.
 
-# /app/models
+/app/models
 
 Neste détório, estão os arquivos que fazem select,update e insert no bando de dados.
 
-# /app/util
+/app/util
 
 Diretório responsável por guardar as classes que tem a função de renderizar os arquivos HTML e mostrar na sua respectiva View. 
 
-# /app/view
+/app/view
 
 É nesse diretório onde os arquivos que serão renderizados pela classe Views estão inseridas. Como por exemplo os arquivos HTML, JavaScript e CSS.
 
