@@ -35,14 +35,15 @@ class Router{
                         "/cardapio.php"=>"controllercardapio",
                         "/carrinho.php"=>"controllercarrinho",
                         "/login.php"=>"controllerlogin",
-                        "/pagamento.php"=>"controllerpagamento"
+                        "/pagamento.php"=>"controllerpagamento",
+                        "/painel.php"=>"controllerpainel"
                 ]; 
         }
 
         private function SetRouterPOST(){
                 $this->POST=[
                        "/"=>"controllerhome",
-                       "/pagamento.php"=>"controllerpagamento"
+                       //"/pagamento.php"=>"controllerpagamento"
                 ];
         }
         //Método que executa a rota
@@ -62,7 +63,10 @@ class Router{
                         $Content = $this->Response->SendResponseLogin(200,"text/html");
                         break;
                 case "/pagamento.php":
-                        $Content = $this->Response->SendResponsePagamentos(200,"text/html");        
+                        $Content = $this->Response->SendResponsePagamentos(200,"text/html",$User); 
+                case "/painel.php":
+                        $Content =  $this->Response->SendResponsePainel(200,"text/html",$User);  
+
               }  
                 return $Content;
         }

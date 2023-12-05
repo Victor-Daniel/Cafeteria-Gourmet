@@ -1,0 +1,95 @@
+<div class="Body">
+
+    <aside class="PainelMenuLateral" id="PainelMenuLateral">
+        <h3>Opções</h3>
+        <ul>
+            <li><button id="btnPedidos">Pedidos</button></li>
+            <li><button id="btnAddProd">Adicionar Produtos</button></li>
+            <li><button id="btnDadosPessoais">Dados Pessoais</button></li>
+            <li><button id="btnAlterarSenha">Alterar Senha</button></li>
+        </ul>
+        
+    </aside>
+    
+    <section class="Painel">
+
+        <div class="Pedidos" id="Pedidos">
+            <table id="tablePedidos">
+                <thead>
+                    <tr class="linha">
+                        <td>Cliente</td>
+                        <td>CPF</td>
+                        <td>Produto</td>
+                        <td>Código</td>
+                        <td>Quantidade</td>
+                        <td>Preço</td>
+                        <td>Total</td>
+                        <td>Data do Pedido</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    
+        <div class="AddProd" id="AddProd">
+            <form action="http://192.168.0.5/Cafeteria-Gourmet/app/common/adicionarprodutos.php" method="post">
+                <h2>Adicionar Produtos</h2>
+                <div>
+                    <div id="Esquerdo">
+                        <ul>
+                            <li><label for="prodnome">Nome do Produto: </label> <input type="text" name="prodnome" id="prodnome" placeholder="Digite o nome do produto."> </li>
+                            <li><label for="descricao">Descrição: </label> <input type="text" name="descricao" id="descricao" placeholder="Digite uma descrição para seu produto."></li>
+                            <li><label for="imgprod">Nome da imagem do Produto: </label><input type="text" name="imgprod" id="imgprod" placeholder="Digite o nome da imagem do produto."></li>
+                        </ul>
+                    </div>
+    
+                    <div id="Direito">
+                        <ul>
+                            <li><label for="prodprice">Preço do Produto: </label> <input type="text" name="prodprice" id="prodprice" placeholder="Digite o preço do produto."> </li>
+                            <li><label for="estoque">Estoque: </label> <input type="text" name="estoque" id="estoque" placeholder="Digite a quantidade de estoque do seu produto."></li>
+                            <li><label for="imgprod">Nome da imagem do Produto: </label><input type="text" name="imgprod" id="imgprod" placeholder="Digite o nome da imagem do produto."></li>
+                        </ul>
+                    </div>
+                </div>
+
+               <input type="submit" value="Adicionar Produto" id="addproduto"> 
+            </form>
+        </div>
+    
+        <div class="DadosPessoais" id="DadosPessoais">
+            <form action="http://192.168.0.5/Cafeteria-Gourmet/app/common/dados.php" method="post">
+                <h2>Dados Pessoais</h2>
+                <div>
+                    <ul>
+                        <li><label for="clientenome">Cliente: </label> <input type="text" name="clientenome" id="clientenome" readonly="true"> </li>
+                        <li><label for="CPF">CPF: </label> <input type="text" name="CPF" id="CPF" readonly="true"></li>
+                        <li><label for="Endereco">Endereço: </label><input type="text" name="Endereco" id="Endereco" readonly="true"><span id="EditEnd">Editar</span></li>
+                        <li><label for="number">Número: </label> <input type="text" name="number" id="number" readonly="true"><span id="Editnum">Editar</span></li>
+                        <li><label for="bairro">Bairro: </label> <input type="text" name="bairro" id="bairro" readonly="true"><span id="Editbai">Editar</span></li>
+                        <li><label for="complemento">Complemento: </label> <input type="text" name="complemento" id="complemento" readonly="true"><span id="Editcomp">Editar</span></li>
+                        <li><label for="Cidade">Cidade: </label> <input type="text" name="Cidade" id="Cidade" readonly="true"><span id="Editcid">Editar</span></li>
+                        <li><label for="Estado">Estado: </label><input type="text" name="Estado" id="Estado" readonly="true"><span id="Editestad">Editar</span></li>
+                    </ul>  
+                </div>
+
+               <input type="submit" value="Salvar" id="saveinfo"> 
+            </form>
+        </div>
+    
+        <div class="AlterarSenha" id="AlterarSenha">
+            <form action="http://192.168.0.5/Cafeteria-Gourmet/app/common/alterarsenha.php" method="post">
+                <h2>Alterar Senha</h2>
+                <div>
+                    <ul>
+                        <li><label for="alterarsenha">Digite a senha Atual: </label> <input type="text" name="alterarsenha" id="alterarsenha"> </li>
+                        <li><label for="newsenha">Digite a Nova senha: </label> <input type="text" name="newsenha" id="newsenha"></li>
+                    </ul>  
+                </div>
+
+               <input type="submit" value="Salvar" id="saveinfo"> 
+            </form>
+        </div>
+    </section>
+    
+
+</div>
+

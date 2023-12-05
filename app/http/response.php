@@ -5,6 +5,8 @@ use app\controllers\pages\ControllerCardapio;
 use app\controllers\pages\ControllerCarrinho;
 use app\controllers\pages\ControllerLogin;
 use app\controllers\pages\ControllerPagamento;
+use app\controllers\pages\ControllerPainel;
+
 
 class Response{
   private $Content;
@@ -62,14 +64,25 @@ class Response{
     return $this->Content;
   }
 
-  public function SendResponsePagamentos($httpcode,$ContentType){
+  public function SendResponsePagamentos($httpcode,$ContentType,$User=null){
     $this->AddHeaders("Content-Type",$ContentType);
     http_response_code($httpcode);
     foreach($this->Headers as $Key=>$Value){
         header($Key.": ".$Value);
     }
 
-    $this->Content = ControllerPagamento::RenderPagamento();
+    $this->Content = ControllerPagamento::RenderPagamento($User);
+    return $this->Content;
+  }
+
+  public function SendResponsePainel($httpcode,$ContentType,$User=null){
+    $this->AddHeaders("Content-Type",$ContentType);
+    http_response_code($httpcode);
+    foreach($this->Headers as $Key=>$Value){
+        header($Key.": ".$Value);
+    }
+
+    $this->Content = ControllerPainel::RenderPainel($User);
     return $this->Content;
   }
 }

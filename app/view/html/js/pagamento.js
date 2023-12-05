@@ -18,7 +18,7 @@ var ExpiryDate = document.querySelector("#expiryDate");
 var cvv = document.querySelector("#cvv");
 
 var Dados = {};
-Dados.Carrinho = Array();
+Dados.Produtos = Array();
 Dados.Pagamento = Array();
 
 CardHolder.addEventListener("keypress",function(e){
@@ -75,48 +75,77 @@ ExpiryDate.addEventListener("change",function(){
 });
 
 
+function AjustandoCarrinho(Produtos){
+    var Estoque = document.querySelectorAll(".Estoque");
+    Estoque.forEach(function(conteudo,indice){
+        if(conteudo.innerHTML==0){
+            alert("Um ou alguns dos produtos deste carrinho não possui estoque disponível! Este produto será removido automaticamente.");
+            Produtos.splice(indice,1);
+            console.log(Produtos);
+        }
+    });
+    VerificarEstoque();
+
+    return Produtos;
+}
+
 Button.addEventListener("click",function(e){
     e.preventDefault();
-    Dados.Carrinho.pop();
+    Dados.Produtos.pop();
     Dados.Pagamento.pop();
     var PadraoCod = /([A-Z]{1}[a-z]{2})[:]/;
     const Regexprod = new RegExp(PadraoCod);
-    var PadraoPrice = /[A-Z][$]/;
-    const RegexPrice = new RegExp(PadraoPrice);
 
     QuantidadeProdutos.forEach(function(Element,indice){
         var CodProd = Cod[indice].innerHTML;
-        var PriceProd = Price[indice].innerHTML;
-
-        if(Regexprod.test(CodProd)&&(RegexPrice.test(PriceProd))){
+        if(Regexprod.test(CodProd)){
             CodProd = CodProd.replace(PadraoCod,"");
-            PriceProd = PriceProd.replace(PadraoPrice,"");
-            Dados.Carrinho[indice] = Array(CodProd,ProdName[indice].innerHTML,PriceProd,Element.value);
+            Dados.Produtos[indice] = Array(CodProd,Element.value);
         }
     });
     InformacoesCartoes.forEach(function(Element,indice){
         Dados.Pagamento[indice] = Element.value;
     });
-
-    RequestPag(Dados);
-
+    Dados.Produtos = AjustandoCarrinho(Dados.Produtos);
+    var empity = 0;
+    Dados.Pagamento.forEach(function(Element){
+        if(Element==""){
+            empity = empity + 1;
+        }
+    });
+    if(empity > 0){
+        alert("Favor preencher os dados corretamente!")
+    }
+    else{
+        RequestPag(Dados);
+    }
 });
 
-async function RequestPag(Dados){
-    try{
-        const response = await fetch('http://192.168.0.5/Cafeteria-Gourmet/pagamento.php',{
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(Dados)
-        });
-        
-        if(response.status==200){
-            window.location.replace("http://192.168.0.5/Cafeteria-Gourmet/painel.php");
+ function RequestPag(Dados){
+    $.ajax({
+        type: "POST",
+        url:"http://192.168.0.5/Cafeteria-Gourmet/app/common/comprar.php",
+        contentType: "application/json",
+        data: JSON.stringify(Dados),
+        success: function(response) {
+            if((response == null) || (response == "")){
+                window.location.replace("http://192.168.0.5/Cafeteria-Gourmet/pagamento.php");
+            }
+         },
+         error: function(error) {
+            console.log("ERROR: " + error);
+         }
+    });
+}
+
+
+
+function VerificarEstoque(){
+    var Estoque = document.querySelectorAll(".Estoque");
+    var Prod = document.querySelectorAll(".CardCarrinho");
+    Estoque.forEach(function(Element,Indice){
+        if(Element.innerHTML==0){
+            Prod[Indice].remove();
         }
-    } 
-    catch(error){
-        alert('Erro na fetch API ! '+ error.message);
-    }
+    });
 }

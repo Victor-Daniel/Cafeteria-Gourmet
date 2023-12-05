@@ -1,0 +1,222 @@
+h1,h2,h3{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+    color: #2b3856d5;
+}
+html,body{
+    overflow-x: hidden;
+}
+.Body{
+    background-color:#cecece;
+    width: 100vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+}
+ul{
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+/*Menu Lateral*/
+
+.PainelMenuLateral{
+    width: 18vw;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 1.5rem;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+}
+
+.PainelMenuLateral > h3{
+    align-self: center;
+}
+
+.PainelMenuLateral > ul > li + li{
+   margin-top: 1.2rem;
+}
+
+.PainelMenuLateral > ul > li > button{
+    height: 1.8rem;
+    width: 17vw;
+    font-size: 1.2rem;
+    color: #2b3856d5;
+    border: none;
+    background-color: white;
+}
+
+.PainelMenuLateral > ul > li > button:hover{
+    color: white;
+    background-color: #2b3856d5;
+    cursor: pointer;
+}
+/*Menu Pedidos*/
+
+.Painel{
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 2.5rem;
+    overflow: auto;
+}
+
+.Painel>.Pedidos{
+    margin-top: 1.5rem;
+    display: none;
+}
+
+.Painel>.Pedidos>#tablePedidos>thead>tr>td{
+    width: 10vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+}
+.Painel>.Pedidos>#tablePedidos>thead>.linha{
+    font-family: 'Poppins', sans-serif;
+    background-color: #2b3856d5;
+    color: white;
+
+}
+
+/*Menu Adicionar Produtos*/
+
+.Painel >.AddProd{
+    margin-top: 20vh;
+}
+
+.Painel > .AddProd > form > h2{
+    font-family: 'Poppins', sans-serif;
+    color: #2b3856d5;
+}
+
+.Painel > .AddProd > form > div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2.5rem;
+}
+
+.Painel > .AddProd > form{
+    text-align: center;
+}
+
+.Painel > .AddProd > form >div> #Esquerdo > ul >li +li{
+    margin-top: 1rem;
+}
+
+.Painel > .AddProd > form > div> #Esquerdo > ul >li > label {
+    font-family: 'Poppins', sans-serif;
+}
+
+.Painel > .AddProd > form > div> #Esquerdo > ul >li > input {
+    width: 13vw;
+}
+
+.Painel > .AddProd > form > div> #Direito > ul >li > input {
+    width: 15vw;
+}
+
+.Painel > .AddProd > form >div> #Direito > ul >li +li{
+    margin-top: 1rem;
+}
+
+.Painel > .AddProd > form > div> #Direito > ul >li > label {
+    font-family: 'Poppins', sans-serif;
+}
+
+.Painel > .AddProd > form > #addproduto{
+    width: 10vw;
+    height: 4vh;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color:#2b3856d5;
+    border: none;
+    color: white;
+    border-radius: 10px;
+
+}
+
+.Painel > .AddProd > form > #addproduto:hover{
+    cursor: pointer;
+}
+
+/*Menu Dados Pessoais*/
+
+.Painel > .DadosPessoais{
+    margin-top: 5vh;
+}
+
+.Painel > .DadosPessoais > form{
+    text-align: center;
+}
+
+.Painel > .DadosPessoais > form > div {
+    margin-bottom: 1.5rem;
+}
+
+.Painel > .DadosPessoais > form > h2{
+    font-family: 'Poppins', sans-serif;
+    color:#2b3856d5;
+}
+
+.Painel > .DadosPessoais > form > div > ul > li > label{
+    font-family: 'Poppins', sans-serif;
+    color:#2b3856d5;
+}
+
+.Painel > .DadosPessoais > form > div > ul > li > span{
+    color:#2b3856d5;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 0.5rem;
+}
+.Painel > .DadosPessoais > form > div > ul > li > span:hover{
+    cursor: pointer;
+}
+
+.Painel > .DadosPessoais > form > div > ul > li + li{
+    margin-top: 1.3rem;
+}
+
+.Painel > .DadosPessoais > form > input{
+    font-family: 'Poppins', sans-serif;
+    background-color:#2b3856d5;
+    border: none;
+    color: white;
+    width: 8vw;
+    height: 3vh;
+    font-size: 1rem;
+}
+
+.Painel > .DadosPessoais > form > input:hover{
+    cursor: pointer;
+}
+/*Alterar Senha*/
+
+.AlterarSenha{
+    text-align: center;
+    margin-top: 8vh;
+}
+
+.AlterarSenha > form > h2{
+    font-family: 'Poppins', sans-serif;
+    color:#2b3856d5;
+}
+
+.AlterarSenha > form > div > ul >li > label{
+    font-family: 'Poppins', sans-serif;
+    color:#2b3856d5;
+}
+
+.AlterarSenha >form > input{
+    font-family: 'Poppins', sans-serif;
+    background-color:#2b3856d5;
+    border: none;
+    color: white;
+    width: 8vw;
+    height: 3vh;
+    font-size: 1rem;
+}

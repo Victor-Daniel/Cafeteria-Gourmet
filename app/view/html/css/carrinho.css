@@ -101,7 +101,8 @@ input{
     display: flex;
     justify-content: center;
     background-color: #cecece;
-    padding-bottom: 1.5rem;
+    padding-bottom: 4.5rem;
+    padding-top: 1.5rem;
 }
 
 .Pagamento>form{

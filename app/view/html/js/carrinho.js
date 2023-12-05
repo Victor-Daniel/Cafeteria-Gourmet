@@ -2,7 +2,6 @@ var Aumentar = document.querySelectorAll('.Aumentar');
 var Quantidade = document.querySelectorAll(".Quantidade");
 var Diminuir = document.querySelectorAll('.Diminuir');
 
-
 Aumentar.forEach(function(elemento,indice){
     
     elemento.addEventListener("click",function(){
@@ -17,4 +16,3 @@ Diminuir.forEach(function(elemento,indice){
         }
     });
 });
-

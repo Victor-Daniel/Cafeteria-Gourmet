@@ -23,7 +23,7 @@ class DatabaseLogin{
         try{
             //Criando conexão pdo com mysql'
             $Conection = new mysqli($this->Host,$this->UserName,$this->Pass,$this->Database,$this->Port);
-            $result = mysqli_query($Conection,"select id,username,permissao from usuario where username='{$user}' and pass='{$pass}'");
+            $result = mysqli_query($Conection,"select id,username,permissao,cpf_cliente_user from usuario where username='{$user}' and pass='{$pass}'");
             $Conection->close();
             $Dados = [];
             while($row = mysqli_fetch_row($result)){

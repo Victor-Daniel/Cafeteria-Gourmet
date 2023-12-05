@@ -11,11 +11,13 @@ if((isset($_POST["tbuser"]))&&(isset($_POST["tbpass"]))||(isset($_SESSION["User"
                 $_SESSION["UserID"] = $Data[0];
                 $_SESSION["User"] = $Data[1];
                 $_SESSION["Permission"] = $Data[2];
+                $_SESSION["CPF"] = $Data[3];
                 $_SESSION["Carrinho"]=["Produtos"=> []];
+                $_SESSION["CompraFinal"] = [];
                 $Content = $Rota -> GetController($_SESSION["User"]);
         }
         else{ 
-                $Content = $Rota -> GetController($_SESSION["User"]);
+                $Content = $Rota -> GetController("Entrar/Login");
         }
 }
 else{

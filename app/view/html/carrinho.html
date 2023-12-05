@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="app/view/html/css/style.css">
     <link rel="stylesheet" href="app/view/html/css/media-query.css">
     <link rel="stylesheet" href="app/view/html/css/carrinho.css">
+    <link rel="stylesheet" href="app/view/html/css/media-query-carrinho.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     {{Header}}
@@ -16,24 +18,24 @@
     </Section>
     <section class="Pagamento">
 
-        <form class="form" action="#">
+        <form class="form" action="http://192.168.0.5/Cafeteria-Gourmet/pagamento.php" method="post">
             <div>
-                <label for="cardNumber">Número do Cartão:</label>
+                <label for="cardNumber" class="labels" id="Teste">Número do Cartão:</label>
                 <input type="text" class="CartaoDados" id="cardNumber" name="cardNumber" placeholder="**** **** **** ****" maxlength="16" required>
             </div>
 
             <div>
-                <label for="cardHolder">Nome no Cartão:</label>
+                <label for="cardHolder" class="labels">Nome no Cartão:</label>
                 <input type="text" class="CartaoDados" id="cardHolder" name="cardHolder" placeholder="Nome Completo" required>
             </div>
 
             <div>
-                <label for="expiryDate">Data de Validade:</label>
+                <label for="expiryDate" class="labels">Data de Validade:</label>
                 <input type="text" class="CartaoDados" id="expiryDate" name="expiryDate" placeholder="MM/AA" maxlength="5" required>
             </div>
 
             <div>
-                <label for="cvv">CVV:</label>
+                <label for="cvv" class="labels">CVV:</label>
                 <input type="text" class="CartaoDados" id="cvv" name="cvv" placeholder="***" maxlength="3" required>
             </div>
 

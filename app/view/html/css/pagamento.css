@@ -1,0 +1,51 @@
+.body-pagamento{
+    background-color:#cecece;
+    text-align: center;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.body-pagamento > .Confirmacao{
+    display: grid;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    background-color: white;
+    width: 80vw;
+    height: 45vh;
+    border-radius: 10px;
+}
+
+.body-pagamento > .Confirmacao > .Logo > img{
+    width: 13vw;
+    height: 25vh;
+}
+
+.body-pagamento > .Confirmacao > .Conteudo{
+    margin-bottom: 1.5rem;
+}
+
+.body-pagamento > .Confirmacao > .Conteudo > p{
+    font-family: 'Poppins', sans-serif;
+    color: #2b3856d5;
+}
+
+.body-pagamento > .Confirmacao >.Botoes > button{
+    margin-bottom: 1.2rem;
+    background-color: white;
+    color: #2b3856d5;
+    border-style: none;
+    height: 1.8rem;
+    border-radius: 10px;
+    outline: none;
+    width: 20vw;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+
+}
+.body-pagamento > .Confirmacao >.Botoes > button:hover{
+    background-color: #2b3856d5;
+    color: white;
+    cursor: pointer;
+}

@@ -40,7 +40,7 @@ class ControllerCardapio{
                     <h3>{$Desc[$i]}</h3>
                     <span>R$ {$Price[$i]}</span>
                     <br>                   
-                    <a href='carrinho.php?Cod=$ID[$i]&Qt=1'><input type='button' value='Comprar' class='comprar'></a>
+                    <a href='carrinho.php?Cod=$ID[$i]&Qt=1'><input type='button' value='Comprar' class='comprar' id='comprar'></a>
                 </div>
             </div>
 

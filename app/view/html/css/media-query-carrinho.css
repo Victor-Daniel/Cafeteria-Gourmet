@@ -1,0 +1,73 @@
+@media screen and (max-width:1500px){
+    .Carrinho > .CardCarrinho{
+        width: 50vw;
+    }
+    .Pagamento>form{
+        width: 52vw;
+    }
+    .Pagamento>form>div>input{
+        width: 15vw;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .Carrinho > .CardCarrinho{
+        width: 80vw;
+    }
+    .Pagamento>form{
+        width: 82vw;
+    }
+    .Pagamento>form>div>input{
+        width: 25vw;
+        height: 1.5rem;
+    }
+    .Pagamento>form>div>.labels{
+        width: 10vw;
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .Pagamento >form> .button{
+        height: 5vh;
+        width: 20vw;
+    }
+}
+
+@media screen and (max-width:750px){
+    .Carrinho > .CardCarrinho{
+        width: 90vw;
+        height: 14vh;
+        
+    }
+    .Pagamento>form{
+        width: 93vw;
+    }
+    .Carrinho > .CardCarrinho > .Prod > h3,h4{
+        font-size: 0.9rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .Carrinho > .CardCarrinho > .Prod >h3{
+        margin-left: 1.5rem !important;
+    }
+    .Carrinho > .CardCarrinho > .QuantCompra >div{
+        margin-right: 1rem;
+    }
+    .Carrinho > .CardCarrinho > .QuantCompra > .QuantEstoque{
+        padding-right: 1.2rem;
+    }
+    .Pagamento >form> .button{
+        height: 5vh;
+        width: 30vw;
+    }
+
+    .Pagamento>form>div>input{
+        width: 35vw;
+    }
+
+    .Pagamento >form> .button{
+        height: 5vh;
+        width: 45vw;
+    }
+}
