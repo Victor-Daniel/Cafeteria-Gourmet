@@ -31,13 +31,16 @@ Este diretório é destinado a arquivos que recebem dados via AJAX.
 
 Este é o diretório responsável por armazenar as classes responsáveis pelas requisições recebidas e fornecer uma resposta. É nesse diretório onde está as Classes de Request, Response e Router.
 
+
 /app/models
 
 Neste détório, estão os arquivos que fazem select,update e insert no bando de dados.
 
+
 /app/util
 
 Diretório responsável por guardar as classes que tem a função de renderizar os arquivos HTML e mostrar na sua respectiva View. 
+
 
 /app/view
 
