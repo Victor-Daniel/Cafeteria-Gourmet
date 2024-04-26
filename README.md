@@ -46,6 +46,6 @@ Diretório responsável por guardar as classes que tem a função de renderizar 
 É nesse diretório onde os arquivos que serão renderizados pela classe Views estão inseridas. Como por exemplo os arquivos HTML, JavaScript e CSS.
 
 
-
+OBS: Projeto ainda não foi Finalizado.
 
 
